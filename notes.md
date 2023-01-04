@@ -10,38 +10,5 @@ To run container and auto move files:
 - docker run --name experimentTransfer -v ${PWD}/models:/models/ trainer:latest 
 
 
-
-docker run --name predictA --rm \
-    -v ${PWD}/trained_model.pt:/models/trained_model.pt \  
-    -v ${PWD}/data/example_images.npy:/example_images.npy \ 
-    predict:latest \
-    ../../models/trained_model.pt \ 
-    ../../example_images.npy
-
-
-
-docker run --name predictAA --rm \
--v ${PWD}/trained_model.pt:/models/trained_model.pt && \ 
--v ${PWD}/data/example_images.npy:/example_images.npy \ 
-predict:latest
-
-docker run --name predictAA --rm \
--v ${PWD}/data/example_images.npy:/example_images.npy \ 
-    predict:latest
-
-
-docker run --name predictA1 --rm 
-    predict:latest \
-    ../../models/trained_model.pt \ 
-    ../../example_images.npy
-
-
-Correct args for prediction:
-docker run --name predictA --rm predict:latest ../../models/trained_model.pt ../../src/data/test.npz
-docker run --name predictA --rm predict:latest ../../models/trained_model.pt ../../src/data/test_images.pt
-
-
-docker run --name predictAA --rm -v ${PWD}/trained_model.pt:/models/trained_model.pt -v ${PWD}/data/example_images.npy:/example_images.npy predict:latest
-
-
-docker run --name predictA --rm predict:latest ../../models/trained_model.pt ../../src/data/example_images.npz
+Correct argumentss for prediction:
+- docker run --name predictA --rm predict:latest ../../models/trained_model.pt ../../src/data/test.npz
