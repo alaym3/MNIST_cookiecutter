@@ -28,7 +28,7 @@ def predict() -> None:
     model = model.to(device)
 
     imgs = np.load(args.data_to_predict)
-    imgs = torch.tensor(imgs['images'], dtype=torch.float, device=device) # need to load only images and not labels
+    imgs = torch.tensor(imgs['images'].reshape(-1, 1, 28, 28), dtype=torch.float, device=device) # need to load only images and not labels
 
     log_probs = model(imgs)
     prediction = log_probs.argmax(dim=-1)
