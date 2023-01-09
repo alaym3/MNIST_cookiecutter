@@ -8,8 +8,8 @@ def load_data():
     # dataset = MNIST
     # train_set = CorruptMnist(train=True, in_folder="../data/raw", out_folder="data/processed")
     # test_set = CorruptMnist(train=False, in_folder="../data/raw", out_folder="data/processed")
-    train_set = CorruptMnist(train=True, in_folder="data/raw", out_folder="data/processed")
-    test_set = CorruptMnist(train=False, in_folder="data/raw", out_folder="data/processed")
+    train_set = CorruptMnist(train=True, in_folder="data/raw", out_folder=None)
+    test_set = CorruptMnist(train=False, in_folder="data/raw", out_folder=None)
     return train_set, test_set
 
 # file_path = "../data/raw"
