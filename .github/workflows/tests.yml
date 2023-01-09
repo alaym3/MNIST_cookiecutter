@@ -62,9 +62,7 @@ jobs:
     - name: Update formatting with black
       run: |
         pip install black
-        black /src
-        black /tests
-        black /notebooks
+        black .
 
     - name: pep8 compliance with flake8
       run: |
