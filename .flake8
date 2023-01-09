@@ -1,3 +1,5 @@
 [flake8]
-ignore = W503 # W503: Line break occurred before binary operator
-max-line-length = 125
+max-line-length = 130
+; ignore = F541
+ignore = E722
+

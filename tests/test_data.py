@@ -1,7 +1,6 @@
-## test that the data has been loaded correctly
+# test that the data has been loaded correctly
 from src.data.make_dataset import CorruptMnist
 import torch
-import os.path
 import pytest
 
 
