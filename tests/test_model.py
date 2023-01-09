@@ -4,6 +4,7 @@ from src.models.model import MyAwesomeModel
 import torch
 import pytest
 
+
 def load_data():
     # dataset = MNIST
     train_set = CorruptMnist(train=True, in_folder="data/raw", out_folder=None)
@@ -13,8 +14,12 @@ def load_data():
 
 def test_input_shape():
     train_set, test_set = load_data()
-    assert train_set[0][0].shape == torch.Size([1,28,28]), "Training dataset does not have the correct torch.Size of [1,28,28]"
-    assert test_set[0][0].shape == torch.Size([1,28,28]), "Testing dataset does not have the correct torch.Size of [1,28,28]"
+    assert train_set[0][0].shape == torch.Size(
+        [1, 28, 28]
+    ), "Training dataset does not have the correct torch.Size of [1,28,28]"
+    assert test_set[0][0].shape == torch.Size(
+        [1, 28, 28]
+    ), "Testing dataset does not have the correct torch.Size of [1,28,28]"
 
 
 def test_output_shape():
@@ -24,10 +29,12 @@ def test_output_shape():
     imgs = torch.tensor(imgs.reshape(-1, 1, 28, 28), dtype=torch.float)
     log_probs = model(imgs)
     probs = log_probs.softmax(dim=-1)
-    assert probs.shape == torch.Size([1,10]), "The output does not have a size of [1,10]."
+    assert probs.shape == torch.Size(
+        [1, 10]
+    ), "The output does not have a size of [1,10]."
 
 
 def test_error_on_wrong_shape():
     model = MyAwesomeModel()
-    with pytest.raises(ValueError, match='Expected input to a 4D tensor'):
-        model(torch.randn(1,2,3))
+    with pytest.raises(ValueError, match="Expected input to a 4D tensor"):
+        model(torch.randn(1, 2, 3))

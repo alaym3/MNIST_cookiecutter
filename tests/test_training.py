@@ -1,4 +1,4 @@
-# # implement at least one test that asserts something about your training script. 
+# # implement at least one test that asserts something about your training script.
 
 # from src.data.make_dataset import CorruptMnist
 # import torch
@@ -14,8 +14,8 @@
 #     assert len(train_set) == 40000
 #     assert len(test_set) == 5000
 #     # assert shape
-    
-    
+
+
 # def test_datapoint_shape():
 #     train_set, test_set = load_data()
 #     assert train_set[0][0].shape == torch.Size([1,28,28])
@@ -24,8 +24,8 @@
 # def test_label_rep():
 #     train_set, _ = load_data()
 #     torch.unique(train_set.targets) == 9
-    
-    
+
+
 # def loading_training():
 #     train_set = CorruptMnist(train=True, in_folder="data/raw", out_folder="data/processed")
 #     dataloader = torch.utils.data.DataLoader(train_set, batch_size=128)
@@ -44,6 +44,5 @@
 #             optimizer.step()
 #             loss_tracker.append(loss.item())
 
-    
+
 # def training():
-    
