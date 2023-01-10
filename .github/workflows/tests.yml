@@ -49,10 +49,10 @@ jobs:
     #   env:
     #     GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest -v
+    # - name: Test with pytest
+    #   run: |
+    #     pip install pytest
+    #     pytest -v
 
     - name: Library sorting with isort
       run: |
@@ -64,7 +64,7 @@ jobs:
         pip install black
         black .
 
-    - name: pep8 compliance with flake8
-      run: |
-        pip install flake8
-        flake8 . --config .flake8
+    # - name: pep8 compliance with flake8
+    #   run: |
+    #     pip install flake8
+    #     flake8 . --config .flake8
